@@ -8,7 +8,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String pesel;
-    private double salaryInUsd;
+    private double salary;
     private String position;
     private String city;
 
@@ -16,7 +16,7 @@ public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.pesel = pesel;
-        this.salaryInUsd = salary;
+        this.salary = salary;
         this.position = position;
         this.city = city;
     }
@@ -33,8 +33,8 @@ public class Employee {
         return pesel;
     }
 
-    public double getSalaryInUsd() {
-        return salaryInUsd;
+    public double getSalary() {
+        return salary;
     }
 
     public String getPosition() {
@@ -50,12 +50,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Double.compare(employee.salaryInUsd, salaryInUsd) == 0 && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(pesel, employee.pesel) && Objects.equals(position, employee.position) && Objects.equals(city, employee.city);
+        return Double.compare(employee.salary, salary) == 0 && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(pesel, employee.pesel) && Objects.equals(position, employee.position) && Objects.equals(city, employee.city);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, pesel, salaryInUsd, position, city);
+        return Objects.hash(firstName, lastName, pesel, salary, position, city);
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Employee {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", pesel='" + pesel + '\'' +
-                ", salary=" + salaryInUsd +
+                ", salary=" + salary +
                 ", position='" + position + '\'' +
                 ", city='" + city + '\'' +
                 '}';
